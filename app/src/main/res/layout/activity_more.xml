@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MoreActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_gravity="top"
+        app:cardBackgroundColor="@color/colorPrimaryDark">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/ubuntu_medium"
+            android:gravity="center"
+            android:text="More"
+            android:textColor="@color/colorWhite"
+            android:textSize="22sp"></TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What is sleep cycle?"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:layout_margin="8dp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/what_is_sleep_cycle"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp"
+                        android:justificationMode="inter_word"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stages of Sleep: The Sleep Cycle"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:layout_margin="8dp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stages_of_sleep"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp"
+                        android:justificationMode="inter_word"
+                        android:layout_margin="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Non-REM Sleep of the Sleep Cycle"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:layout_margin="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stage 1 Sleep"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:layout_margin="8dp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stage_1_sleep"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp"
+                        android:layout_margin="8dp"
+                        android:justificationMode="inter_word"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stage 2 Sleep"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:layout_margin="8dp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stage_2_sleep"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp"
+                        android:layout_margin="8dp"
+                        android:justificationMode="inter_word"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stage 3 and 4 Sleep"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:layout_margin="8dp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stage_3_4_sleep"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp"
+                        android:layout_margin="8dp"
+                        android:justificationMode="inter_word"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="REM Sleep of the Sleep Cycle"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:layout_margin="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorCard"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stage 5 Sleep"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/colorText"
+                        android:textSize="18sp"
+                        android:layout_margin="8dp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stage_5_sleep"
+                        android:fontFamily="@font/ubuntu"
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp"
+                        android:justificationMode="inter_word"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:layout_margin="8dp"
+                        android:paddingBottom="8dp"></TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="116dp"></View>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="28dp"
+        app:backgroundTint="@color/colorAccent"
+        app:tint="@color/colorBlack"
+        app:rippleColor="@color/colorWhite"
+        android:src="@drawable/ic_back"
+        app:fabCustomSize="65dp">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
