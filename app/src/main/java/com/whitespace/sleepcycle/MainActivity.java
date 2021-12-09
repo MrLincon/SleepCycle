@@ -9,9 +9,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.Ad;
+import com.facebook.ads.AdError;
+import com.facebook.ads.AdListener;
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -23,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
     CardView powerNap, firstCycle, secondCycle, thirdCycle, fourthCycle, fifthCycle, sixthCycle;
     View powerNapSelector, firstCycleSelector, secondCycleSelector,
-            thirdCycleSelector,fourthCycleSelector, fifthCycleSelector, sixthCycleSelector;
+            thirdCycleSelector, fourthCycleSelector, fifthCycleSelector, sixthCycleSelector;
     String sheetTitle;
     int sheetHour, sheetMin;
+
+    private AdView adView;
 
     String Category = "Sleep Cycle";
 
@@ -65,18 +74,21 @@ public class MainActivity extends AppCompatActivity {
         fifthCycleSelector = findViewById(R.id.five_cycle_selector);
         sixthCycleSelector = findViewById(R.id.six_cycle_selector);
 
+        AudienceNetworkAds.initialize(MainActivity.this);
+
+
         categories.setOnCheckedChangeListener(new ChipGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(ChipGroup chipGroup, int i) {
 
                 Chip chip = chipGroup.findViewById(i);
                 Category = (String) chip.getChipText();
-                
-                if (Category.equals("More")){
-                   Intent more = new Intent(MainActivity.this,MoreActivity.class);
-                   startActivity(more);
+
+                if (Category.equals("More")) {
+                    Intent more = new Intent(MainActivity.this, MoreActivity.class);
+                    startActivity(more);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-                   finish();
+                    finish();
                 }
             }
         });
@@ -93,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         loadData();
-
+        loadAd();
     }
 
     private void loadData() {
@@ -109,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 20;
                 powerNapSelector.setVisibility(View.VISIBLE);
 
-               
+
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
 
             }
@@ -124,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 30;
                 firstCycleSelector.setVisibility(View.VISIBLE);
 
-               
+
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
@@ -138,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 00;
                 secondCycleSelector.setVisibility(View.VISIBLE);
 
-              
+
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
@@ -152,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 30;
                 thirdCycleSelector.setVisibility(View.VISIBLE);
 
-               
+
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
@@ -167,7 +179,6 @@ public class MainActivity extends AppCompatActivity {
                 fourthCycleSelector.setVisibility(View.VISIBLE);
 
 
-               
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
@@ -181,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 30;
                 fifthCycleSelector.setVisibility(View.VISIBLE);
 
-               
+
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
@@ -195,57 +206,100 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 00;
                 sixthCycleSelector.setVisibility(View.VISIBLE);
 
-               
+
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
 
     }
 
-    public String getSheetTitle(){
+    private void loadAd() {
+        adView = new AdView(this, "3988259537888870_3997261750321982", AdSize.BANNER_HEIGHT_50);
+
+        // Find the Ad Container
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+
+
+        AdListener adListener = new AdListener() {
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                Toast.makeText(MainActivity.this, "Error: " + adError.getErrorMessage(), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+
+            }
+        };
+
+        adView.loadAd(adView.buildLoadAdConfig().withAdListener(adListener).build());
+    }
+
+    public String getSheetTitle() {
         return sheetTitle;
     }
 
-    public int getSheetHour(){
+    public int getSheetHour() {
         return sheetHour;
     }
 
-    public int getSheetMin(){
+    public int getSheetMin() {
         return sheetMin;
     }
 
-    public View getPowerNapSelector(){
+    public View getPowerNapSelector() {
         return powerNapSelector;
     }
 
 
-    public View getFirstCycleSelector(){
+    public View getFirstCycleSelector() {
         return firstCycleSelector;
     }
 
 
-    public View getSecondCycleSelector(){
+    public View getSecondCycleSelector() {
         return secondCycleSelector;
     }
 
 
-    public View getThirdCycleSelector(){
+    public View getThirdCycleSelector() {
         return thirdCycleSelector;
     }
 
 
-    public View getFourthCycleSelector(){
+    public View getFourthCycleSelector() {
         return fourthCycleSelector;
     }
 
 
-    public View getFifthCycleSelector(){
+    public View getFifthCycleSelector() {
         return fifthCycleSelector;
     }
 
 
-    public View getSixthCycleSelector(){
+    public View getSixthCycleSelector() {
         return sixthCycleSelector;
     }
 
+
+    @Override
+    protected void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
 }

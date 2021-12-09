@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="-10dp"
+        android:layout_height="60dp"
         android:layout_gravity="top"
-        app:cardBackgroundColor="@color/colorPrimaryDark">
+        android:background="@drawable/toolbar_bg">
 
         <TextView
             android:layout_width="match_parent"
@@ -23,7 +21,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="22sp"></TextView>
 
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ScrollView
@@ -239,9 +237,9 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="28dp"
         app:backgroundTint="@color/colorAccent"
-        app:tint="@color/colorBlack"
         app:rippleColor="@color/colorWhite"
         android:src="@drawable/ic_back"
+        app:tint="@color/colorIcon"
         app:fabCustomSize="65dp">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

@@ -7,13 +7,11 @@
     android:background="@color/colorBackground"
     tools:context=".MoreActivity">
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="-10dp"
+        android:layout_height="60dp"
         android:layout_gravity="top"
-        app:cardBackgroundColor="@color/colorPrimaryDark">
+        android:background="@drawable/toolbar_bg">
 
         <TextView
             android:layout_width="match_parent"
@@ -24,7 +22,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="22sp"></TextView>
 
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,6 +35,28 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How much sleep does one need?"
+                android:fontFamily="@font/ubuntu_medium"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"></TextView>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></androidx.viewpager2.widget.ViewPager2>
+
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,8 +64,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp">
 
@@ -87,8 +107,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp">
 
                 <LinearLayout
@@ -129,8 +149,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp">
 
@@ -162,8 +182,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
@@ -205,7 +225,10 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_margin="8dp">
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -245,8 +268,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp">
 
                 <LinearLayout
@@ -287,8 +310,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp">
 
@@ -320,8 +343,8 @@
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
                 app:cardCornerRadius="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp">
 
                 <LinearLayout
@@ -372,9 +395,9 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="28dp"
         app:backgroundTint="@color/colorAccent"
-        app:tint="@color/colorBlack"
         app:rippleColor="@color/colorWhite"
         android:src="@drawable/ic_back"
+        app:tint="@color/colorIcon"
         app:fabCustomSize="65dp">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

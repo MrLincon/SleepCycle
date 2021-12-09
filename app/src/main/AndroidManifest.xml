@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SleepCycle">
         <activity android:name=".MoreActivity"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".AlarmActivity" />
+        <activity android:name=".TestActivity" />
         <activity android:name=".SettingsActivity"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
