@@ -206,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
                 sheetMin = 00;
                 sixthCycleSelector.setVisibility(View.VISIBLE);
 
-
                 bottomSheet.show(getSupportFragmentManager(), "Sleep Cycle");
             }
         });
@@ -246,6 +245,14 @@ public class MainActivity extends AppCompatActivity {
         };
 
         adView.loadAd(adView.buildLoadAdConfig().withAdListener(adListener).build());
+    }
+
+
+    public void recreateActivity(){
+        finish();
+        Intent intent = new Intent(MainActivity.this,MainActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     public String getSheetTitle() {
@@ -301,5 +308,11 @@ public class MainActivity extends AppCompatActivity {
             adView.destroy();
         }
         super.onDestroy();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+       recreateActivity();
     }
 }

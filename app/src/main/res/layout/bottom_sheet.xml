@@ -138,15 +138,18 @@
 
         </LinearLayout>
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/alarm_start"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            app:tint="@color/colorAccent"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:src="@drawable/ic_play"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout"></ImageView>
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/play" />
+
 
         <TextView
             android:id="@+id/extra_info"

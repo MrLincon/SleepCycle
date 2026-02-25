@@ -8,7 +8,7 @@
     <color name="colorText">#121416</color>
     <color name="colorTextSecondary">#99121416</color>
     <color name="colorSecondary">#161616</color>
-    <color name="colorIcon">#fff</color>
+    <color name="colorIcon">#000</color>
     <color name="colorButton">#000</color>
     <color name="colorView">#321D1D1D</color>
 

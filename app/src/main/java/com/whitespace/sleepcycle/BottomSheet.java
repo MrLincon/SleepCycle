@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.Calendar;
@@ -25,7 +26,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
     Calendar calendar;
     int calHourIn24, calHour, calMinute;
     String am_pm;
-    ImageView alarm;
+    LottieAnimationView alarm;
 
     View powerNapSelector, firstCycleSelector, secondCycleSelector, thirdCycleSelector, fourthCycleSelector, fifthCycleSelector, sixthCycleSelector;
 
@@ -116,13 +117,13 @@ public class BottomSheet extends BottomSheetDialogFragment {
                 if (am_pm.equals("PM")) {
                     intent.putExtra(AlarmClock.EXTRA_HOUR, calHour+12);
                 }
+                startActivity(intent);
 
-
-                if (intent.resolveActivity(getContext().getPackageManager()) != null) {
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getContext(), "There is no app that support this action", Toast.LENGTH_SHORT).show();
-                }
+//                if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+//
+//                } else {
+//                    Toast.makeText(getContext(), "There is no app that support this action", Toast.LENGTH_SHORT).show();
+//                }
                 dismiss();
             }
         });
