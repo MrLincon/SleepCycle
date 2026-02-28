@@ -1,21 +1,20 @@
 # SleepCycle
 
-<img  src= "Asset/Sleep-cycle.png " width= 200 height= 200>
+<!-- <img  src= "Asset/Sleep-cycle.png " width= 200 height= 200>
 
 <img  src= "Asset/Sleep-cycle-Banner.jpg " width= 650 height= 330> 
 
-<img  src= "Asset/Sleep-cycle-2.jpg " width= 200 height= 380> <img  src= "Asset/Sleep-cycle-3.jpg " width= 200 height= 380> <img  src= "Asset/Sleep-cycle-4.jpg " width= 200 height= 380> <img  src= "Asset/Sleep-cycle-5.jpg " width= 200 height= 380> 
+<img  src= "Asset/Sleep-cycle-2.jpg " width= 200 height= 380> <img  src= "Asset/Sleep-cycle-3.jpg " width= 200 height= 380> <img  src= "Asset/Sleep-cycle-4.jpg " width= 200 height= 380> <img  src= "Asset/Sleep-cycle-5.jpg " width= 200 height= 380>  -->
 
 ## About
 Sleep Cycle is a simple and elegant alarm allpication where you can wake up following a sleep cycle so that you feel fresh after every nap.
 
 ## Tools
 
-- UI - XML
-- Language - Java
+- UI - Jetpack Compose
+- Language - Kotlin
 - Database - None (Shared Preference)
-- Graphics - Adobe Illustrator
-- Version Support - Android 6 to Android 11
+- Version Support - Android 6 to Android 16
 
 
 ## White-Space
