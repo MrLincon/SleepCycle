@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.whitespace.sleepcycle">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission
+        android:name="android.permission.USE_EXACT_ALARM"
+        tools:ignore="ExactAlarmPolicy" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE"
+        tools:ignore="ForegroundServicesPolicy" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"
+        tools:ignore="FullScreenIntentPolicy" />
+
 
     <application
+        android:name=".SleepCycleApplication"
         android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SleepCycle">
+        android:theme="@style/Theme.Sleep_cycle">
         <activity
-            android:name=".MoreActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".TestActivity" />
-        <activity
-            android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".AlarmActivity"
+            android:exported="false"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            tools:targetApi="27" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Sleep_cycle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,9 +46,21 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <receiver
+            android:name=".alarm.receiver.AlarmReceiver"
+            android:exported="false" />
+        <receiver
+            android:name=".alarm.receiver.DismissReceiver"
+            android:exported="false" />
+
+        <service
+            android:name=".alarm.service.AlarmService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+        <service
+            android:name=".alarm.service.AlarmNotificationService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
     </application>
 
 </manifest>
