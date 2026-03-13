@@ -1,15 +1,8 @@
 package com.whitespace.sleepcycle.presentation.screens
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -24,8 +17,9 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.whitespace.sleepcycle.presentation.components.ActiveAlarmsList
 import com.whitespace.sleepcycle.presentation.components.AppText
-import com.whitespace.sleepcycle.presentation.screens.home.HomeUiEvent
-import com.whitespace.sleepcycle.presentation.screens.home.HomeViewModel
+import com.whitespace.sleepcycle.presentation.components.AppTopBar
+import com.whitespace.sleepcycle.presentation.screens.home.viewmodel.HomeUiEvent
+import com.whitespace.sleepcycle.presentation.screens.home.viewmodel.HomeViewModel
 
 @Composable
 fun AlarmScreen(
@@ -37,18 +31,7 @@ fun AlarmScreen(
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
-        topBar = {
-            Box(
-                modifier = Modifier
-                    .padding(top = 56.dp, start = 16.dp, end = 16.dp, bottom = 24.dp),
-            ) {
-                AppText(
-                    text = "Active Alarms",
-                    fontSize = 28.sp,
-                    fontWeight = FontWeight.Black
-                )
-            }
-        }
+        topBar = { AppTopBar(title = "Active Alarms") }
     ) { paddingValues ->
         Box(
             modifier = Modifier

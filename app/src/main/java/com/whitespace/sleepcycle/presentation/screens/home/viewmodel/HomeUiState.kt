@@ -1,4 +1,4 @@
-package com.whitespace.sleepcycle.presentation.screens.home
+package com.whitespace.sleepcycle.presentation.screens.home.viewmodel
 
 import com.whitespace.sleepcycle.data.entity.AlarmEntity
 

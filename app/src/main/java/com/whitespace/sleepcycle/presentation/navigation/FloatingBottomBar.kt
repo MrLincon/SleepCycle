@@ -9,10 +9,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Alarm
 import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -36,10 +41,10 @@ fun FloatingBottomBar(
     modifier: Modifier = Modifier
 ) {
     val items = listOf(
-        FloatingNavItem(Screen.Home.route, "Home", Icons.Filled.Home),
-        FloatingNavItem(Screen.Alarm.route, "Alarm", Icons.Filled.GridView),
-        FloatingNavItem(Screen.Info.route, "Info", Icons.Filled.Info),
-        FloatingNavItem(Screen.Settings.route, "Settings", Icons.Filled.Settings),
+        FloatingNavItem(Screen.Home.route, "Home", Icons.Outlined.Home),
+        FloatingNavItem(Screen.Alarm.route, "Alarm", Icons.Outlined.Alarm),
+        FloatingNavItem(Screen.Info.route, "Info", Icons.Outlined.Info),
+        FloatingNavItem(Screen.Settings.route, "Settings", Icons.Outlined.Settings),
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()

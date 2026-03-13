@@ -9,11 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.whitespace.sleepcycle.DismissAlarmScreen
 import com.whitespace.sleepcycle.presentation.screens.AlarmScreen
-import com.whitespace.sleepcycle.presentation.screens.InfoScreen
+import com.whitespace.sleepcycle.presentation.screens.info.InfoScreen
 import com.whitespace.sleepcycle.presentation.screens.home.HomeScreen
-import com.whitespace.sleepcycle.presentation.screens.SettingsScreen
+import com.whitespace.sleepcycle.presentation.screens.settings.SettingsScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

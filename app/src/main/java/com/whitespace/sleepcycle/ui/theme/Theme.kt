@@ -29,7 +29,7 @@ private val DarkColorScheme = darkColorScheme(
     primaryContainer = ColorCardSecondary,
     onPrimaryContainer = ColorTextPrimary,
     outline = ColorBorder,
-    surfaceBright = ColorWhite,
+    surfaceBright = ColorCardBright,
     surfaceContainerHigh = ColorWhite,
     surfaceContainerHighest = ColorWhite,
 
