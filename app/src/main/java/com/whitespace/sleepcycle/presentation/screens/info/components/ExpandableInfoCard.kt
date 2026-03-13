@@ -79,8 +79,8 @@ fun ExpandableInfoCard(
                 Icon(
                     imageVector = if (expanded) Icons.Filled.Remove else Icons.Filled.Add,
                     contentDescription = null,
-                    tint = if (expanded) MaterialTheme.colorScheme.primary
-                    else MaterialTheme.colorScheme.onSurfaceVariant,
+                    tint = if (expanded) MaterialTheme.colorScheme.onPrimary
+                    else MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(14.dp)
                 )
             }

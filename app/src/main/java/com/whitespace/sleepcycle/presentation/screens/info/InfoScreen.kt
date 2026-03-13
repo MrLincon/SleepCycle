@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.whitespace.sleepcycle.presentation.components.AppTopBar
 import com.whitespace.sleepcycle.presentation.screens.info.components.InfoSectionBlock
+import com.whitespace.sleepcycle.presentation.screens.info.components.SleepCycleChart
 
 @Composable
 fun InfoScreen(navController: NavController) {
@@ -28,6 +29,14 @@ fun InfoScreen(navController: NavController) {
                 .padding(paddingValues),
             contentPadding = PaddingValues(bottom = 96.dp)
         ) {
+
+            item {
+                SleepCycleChart(
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+                Spacer(Modifier.height(12.dp))
+            }
+
             infoSections.forEachIndexed { index, section ->
                 item {
                     InfoSectionBlock(
