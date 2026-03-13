@@ -53,7 +53,8 @@ class AlarmNotificationService : Service() {
 
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Alarm set for $alarmTimeFormatted")
-            .setContentText(durationText)
+//            .setContentText(durationText)
+            .setContentText("")
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setOngoing(true)
             .setAutoCancel(false)

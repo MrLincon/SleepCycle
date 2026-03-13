@@ -109,8 +109,8 @@ fun HomeScreen(
                     isPowerNap = true,
                     onClick = {
                         selectedNap = NapDataModel(
-                            durationMinutes = 1,
-                            extraMin = 0,
+                            durationMinutes = 20,
+                            extraMin = 10,
                             label = "Power Nap - 20m",
                             cycles = "POWER NAP"
                         )
