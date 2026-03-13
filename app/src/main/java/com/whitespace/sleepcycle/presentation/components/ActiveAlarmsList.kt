@@ -28,15 +28,19 @@ import java.util.Locale
 @Composable
 fun ActiveAlarmsList(
     alarms: List<AlarmEntity>,
+    showTitle: Boolean = true,
     onCancel: (AlarmEntity) -> Unit
 ) {
     if (alarms.isEmpty()) return
 
     Column(modifier = Modifier.fillMaxWidth()) {
 
-        AppText("Active Alarms", fontSize = 20.sp, fontWeight = FontWeight.Black)
+        if (showTitle){
+            AppText("Active Alarms", fontSize = 20.sp, fontWeight = FontWeight.Black)
 
-        Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
+        }
+
 
         alarms.forEach { alarm ->
             val timeFormatted = SimpleDateFormat("hh:mm a", Locale.getDefault())

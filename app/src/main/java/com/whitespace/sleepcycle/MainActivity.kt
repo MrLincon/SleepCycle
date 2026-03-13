@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavGraph
 import androidx.navigation.compose.rememberNavController
+import com.whitespace.sleepcycle.presentation.navigation.AppScaffold
 import com.whitespace.sleepcycle.presentation.navigation.NavGraph
 import com.whitespace.sleepcycle.ui.theme.SleepCycleTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SleepCycleTheme {
                 val navController = rememberNavController()
-                NavGraph(navController = navController)
+                AppScaffold(navController)
             }
         }
 

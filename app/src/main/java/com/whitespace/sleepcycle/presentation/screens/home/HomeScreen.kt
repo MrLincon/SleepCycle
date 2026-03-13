@@ -82,7 +82,8 @@ fun HomeScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(16.dp)
+                .padding(top = 16.dp, start = 16.dp, end = 16.dp)
+
         ) {
             Column(
                 modifier = Modifier
@@ -235,7 +236,7 @@ fun HomeScreen(
                     }
                 )
 
-                Spacer(Modifier.height(16.dp))
+                Spacer(Modifier.height(76.dp))
             }
 
 
