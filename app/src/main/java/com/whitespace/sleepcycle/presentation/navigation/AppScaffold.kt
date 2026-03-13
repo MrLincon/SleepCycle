@@ -40,7 +40,7 @@ fun AppScaffold(navController: NavHostController) {
             hazeState = hazeState,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(bottom = 18.dp)
+                .padding(bottom = 36.dp)
         )
     }
 }
