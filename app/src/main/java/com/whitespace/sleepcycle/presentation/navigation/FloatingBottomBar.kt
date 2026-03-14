@@ -1,5 +1,6 @@
 package com.whitespace.sleepcycle.presentation.navigation
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -28,6 +29,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.whitespace.sleepcycle.R
 import dev.chrisbanes.haze.HazeDefaults
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeEffect
@@ -41,10 +43,10 @@ fun FloatingBottomBar(
     modifier: Modifier = Modifier
 ) {
     val items = listOf(
-        FloatingNavItem(Screen.Home.route, "Home", Icons.Outlined.Home),
-        FloatingNavItem(Screen.Alarm.route, "Alarm", Icons.Outlined.Alarm),
-        FloatingNavItem(Screen.Info.route, "Info", Icons.Outlined.Info),
-        FloatingNavItem(Screen.Settings.route, "Settings", Icons.Outlined.Settings),
+        FloatingNavItem(Screen.Home.route, "Home", R.drawable.ic_home),
+        FloatingNavItem(Screen.Alarm.route, "Alarm", R.drawable.ic_alarm),
+        FloatingNavItem(Screen.Info.route, "Info", R.drawable.ic_info),
+        FloatingNavItem(Screen.Settings.route, "Settings", R.drawable.ic_settings),
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -84,7 +86,7 @@ fun FloatingBottomBar(
                 FloatingBottomBarItem(
                     selected = selected,
                     label = item.label,
-                    icon = item.icon,
+                    iconRes = item.iconRes,
                     onClick = {
                         navController.navigate(item.route) {
                             popUpTo(Screen.Home.route) { saveState = true }
@@ -101,5 +103,5 @@ fun FloatingBottomBar(
 data class FloatingNavItem(
     val route: String,
     val label: String,
-    val icon: androidx.compose.ui.graphics.vector.ImageVector
+    @param:DrawableRes val iconRes: Int
 )

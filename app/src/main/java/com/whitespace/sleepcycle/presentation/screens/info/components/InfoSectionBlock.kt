@@ -97,7 +97,7 @@ fun InfoSectionBlock(
                 if (index != section.items.lastIndex) {
                     HorizontalDivider(
                         modifier = Modifier.padding(horizontal = 16.dp),
-                        color = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f),
+                        color = MaterialTheme.colorScheme.outline,
                         thickness = 1.dp
                     )
                 }

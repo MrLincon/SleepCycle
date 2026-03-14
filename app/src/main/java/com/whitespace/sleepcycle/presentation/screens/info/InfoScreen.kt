@@ -21,7 +21,7 @@ fun InfoScreen(navController: NavController) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
-        topBar = { AppTopBar(title = "Sleep Info") }
+        topBar = { AppTopBar(title = "Sleep Cycle Info") }
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier

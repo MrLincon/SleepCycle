@@ -81,7 +81,7 @@ fun ActiveAlarmsList(
                                 contentAlignment = Alignment.Center
                             ) {
                                 Icon(
-                                    painter = painterResource(id = R.drawable.ic_alarm_clock),
+                                    painter = painterResource(id = R.drawable.ic_alarm),
                                     contentDescription = "Clock",
                                     tint = MaterialTheme.colorScheme.onPrimary,
                                     modifier = Modifier.size(32.dp)

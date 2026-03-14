@@ -3,7 +3,7 @@ package com.whitespace.sleepcycle.presentation.screens.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.whitespace.sleepcycle.alarm.scheduler.AlarmScheduler
+import com.whitespace.sleepcycle.core.alarm.scheduler.AlarmScheduler
 import com.whitespace.sleepcycle.data.dao.AlarmDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted

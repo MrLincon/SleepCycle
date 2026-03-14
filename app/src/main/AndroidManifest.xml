@@ -47,18 +47,18 @@
         </activity>
 
         <receiver
-            android:name=".alarm.receiver.AlarmReceiver"
+            android:name=".core.alarm.receiver.AlarmReceiver"
             android:exported="false" />
         <receiver
-            android:name=".alarm.receiver.DismissReceiver"
+            android:name=".core.alarm.receiver.DismissReceiver"
             android:exported="false" />
 
         <service
-            android:name=".alarm.service.AlarmService"
+            android:name=".core.alarm.service.AlarmService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
         <service
-            android:name=".alarm.service.AlarmNotificationService"
+            android:name=".core.alarm.service.AlarmNotificationService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
     </application>

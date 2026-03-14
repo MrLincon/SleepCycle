@@ -3,6 +3,7 @@ package com.whitespace.sleepcycle.presentation.screens.settings
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -41,16 +42,18 @@ import androidx.navigation.NavController
 import com.whitespace.sleepcycle.presentation.components.AppText
 import com.whitespace.sleepcycle.presentation.components.AppTopBar
 import androidx.core.net.toUri
+import com.whitespace.sleepcycle.R
+import com.whitespace.sleepcycle.presentation.screens.settings.components.SettingsRow
 
 private const val APP_PACKAGE = "com.whitespace.sleepcycle"
 private const val FEEDBACK_EMAIL = "ahamedlincon.office@gmail.com"
 private const val PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=$APP_PACKAGE"
 private const val SHARE_MESSAGE = "Check out Sleep Cycle to optimise sleep with science-backed cycles. Check it out! \n\n$PLAY_STORE_URL"
 
-private data class SettingsItem(
+data class SettingsItem(
     val title: String,
     val subtitle: String,
-    val icon: ImageVector,
+    @DrawableRes val iconRes: Int,
     val onClick: (Context) -> Unit
 )
 
@@ -62,7 +65,7 @@ fun SettingsScreen(navController: NavController) {
         SettingsItem(
             title = "Rate the App",
             subtitle = "Enjoying Sleep Cycle? Leave us a review",
-            icon = Icons.Filled.Star,
+            iconRes = R.drawable.ic_rate,
             onClick = { ctx ->
                 val intent = Intent(Intent.ACTION_VIEW).apply {
                     data = PLAY_STORE_URL.toUri()
@@ -78,7 +81,7 @@ fun SettingsScreen(navController: NavController) {
         SettingsItem(
             title = "Share",
             subtitle = "Share Sleep Cycle with friends and family",
-            icon = Icons.Filled.Share,
+            iconRes = R.drawable.ic_share,
             onClick = { ctx ->
                 val intent = Intent(Intent.ACTION_SEND).apply {
                     type = "text/plain"
@@ -90,7 +93,7 @@ fun SettingsScreen(navController: NavController) {
         SettingsItem(
             title = "Send Feedback",
             subtitle = "Report a bug or suggest a feature",
-            icon = Icons.Filled.Email,
+            iconRes = R.drawable.ic_feedback,
             onClick = { ctx ->
                 val intent = Intent(Intent.ACTION_SENDTO).apply {
                     data = "mailto:$FEEDBACK_EMAIL".toUri()
@@ -135,7 +138,7 @@ fun SettingsScreen(navController: NavController) {
                         if (index != settingsItems.lastIndex) {
                             HorizontalDivider(
                                 modifier = Modifier.padding(horizontal = 16.dp),
-                                color = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f),
+                                color = MaterialTheme.colorScheme.outline,
                                 thickness = 1.dp
                             )
                         }
@@ -146,55 +149,3 @@ fun SettingsScreen(navController: NavController) {
     }
 }
 
-@Composable
-private fun SettingsRow(
-    item: SettingsItem,
-    onClick: () -> Unit
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onClick() }
-            .padding(horizontal = 16.dp, vertical = 14.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Box(
-                modifier = Modifier
-                    .size(40.dp)
-                    .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.surfaceContainer),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = item.icon,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(18.dp)
-                )
-            }
-            Spacer(Modifier.width(14.dp))
-            Column {
-                AppText(
-                    text = item.title,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.SemiBold,
-                )
-                Spacer(Modifier.height(4.dp))
-                AppText(
-                    text = item.subtitle,
-                    fontSize = 12.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-        }
-
-        Icon(
-            imageVector = Icons.Filled.ChevronRight,
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.size(18.dp)
-        )
-    }
-}

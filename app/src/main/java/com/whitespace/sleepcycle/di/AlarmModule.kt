@@ -1,7 +1,7 @@
 package com.whitespace.sleepcycle.di
 
-import com.whitespace.sleepcycle.alarm.scheduler.AlarmScheduler
-import com.whitespace.sleepcycle.alarm.scheduler.AlarmSchedulerImpl
+import com.whitespace.sleepcycle.core.alarm.scheduler.AlarmScheduler
+import com.whitespace.sleepcycle.core.alarm.scheduler.AlarmSchedulerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

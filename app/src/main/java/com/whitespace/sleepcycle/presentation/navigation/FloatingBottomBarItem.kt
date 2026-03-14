@@ -1,5 +1,6 @@
 package com.whitespace.sleepcycle.presentation.navigation
 
+import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.EaseInOutCubic
@@ -21,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.whitespace.sleepcycle.presentation.components.AppText
@@ -29,7 +31,7 @@ import com.whitespace.sleepcycle.presentation.components.AppText
 fun FloatingBottomBarItem(
     selected: Boolean,
     label: String,
-    icon: ImageVector,
+    @DrawableRes iconRes: Int,
     onClick: () -> Unit
 ) {
 
@@ -37,7 +39,7 @@ fun FloatingBottomBarItem(
         targetValue = if (selected)
             MaterialTheme.colorScheme.primary
         else
-            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.35f),
+            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
         animationSpec = tween(durationMillis = 300, easing = EaseInOutCubic),
         label = "containerColor"
     )
@@ -71,7 +73,7 @@ fun FloatingBottomBarItem(
             horizontalArrangement = Arrangement.Center
         ) {
             Icon(
-                imageVector = icon,
+                painter = painterResource(id = iconRes),
                 contentDescription = label,
                 tint = iconTint
             )
