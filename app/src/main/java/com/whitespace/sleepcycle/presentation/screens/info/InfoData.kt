@@ -52,39 +52,39 @@ val infoSections = listOf(
         items = listOf(
             InfoCardModel(
                 title = "What is a Sleep Cycle?",
-                body = "Every night we go through four to six sleep cycles. Each cycle takes 70-110 minutes to complete (90 on average). On each cycle, we go through three stages - a light stage, a medium stage, and a deep stage. Completing a full cycle allows you to wake up refreshed, rather than groggy mid-cycle."
+                body = "Every night we go through four to six sleep cycles. Each cycle takes 70-110 minutes to complete (90 on average). Each cycle passes through four stages - N1, N2, N3, and REM. Completing a full cycle allows you to wake up refreshed, rather than groggy mid-cycle."
             ),
             InfoCardModel(
-                title = "The Five Stages",
-                body = "There are five stages of sleep. Stages 1-4 are categorised as Non-REM sleep. The fifth stage is REM sleep. Scientists categorised these stages based on observed brain activity and physical characteristics during sleep."
+                title = "The Four Stages",
+                body = "Modern sleep science (AASM, 2007) classifies sleep into four stages. N1, N2, and N3 are Non-REM sleep, and the fourth stage is REM sleep. Each stage plays a distinct role in physical and mental restoration."
             ),
         )
     ),
     InfoSectionModel(
         title = "Non-REM Sleep",
-        subtitle = "Stages 1 through 4",
+        subtitle = "Stages N1, N2, and N3",
         items = listOf(
             InfoCardModel(
-                title = "Stage 1 - Light Sleep",
-                body = "The lightest stage of sleep. Brain frequency slows slightly compared to wakefulness. Muscle tone is present in skeletal muscles and breathing remains regular. This stage typically lasts just a few minutes."
+                title = "N1 - Light Sleep",
+                body = "The lightest and shortest stage, lasting just 1-5 minutes. Brain activity slows from wakefulness but remains relatively fast. Muscle tone is present and breathing is regular. It is easy to be woken during N1 - many people don't even realise they fell asleep."
             ),
             InfoCardModel(
-                title = "Stage 2 - Deeper Sleep",
-                body = "Follows Stage 1 and represents a deeper level of sleep. The sleeper becomes harder to awaken. Characterised by saw-tooth waves and sleep spindles visible in EEG readings."
+                title = "N2 - Core Sleep",
+                body = "The most dominant stage, making up roughly 45-55% of total sleep time. The sleeper becomes harder to awaken. N2 is characterised by sleep spindles and K-complexes in EEG readings and plays a key role in memory consolidation and motor learning."
             ),
             InfoCardModel(
-                title = "Stages 3 & 4 - Slow Wave Sleep",
-                body = "The deepest stages of Non-REM sleep, also called Slow Wave Sleep (SWS) or delta sleep. The EEG shows slow, high-amplitude delta waves. Sleepers in SWS can be extremely difficult to wake sometimes even loud noises over 100 dB won't rouse them. With age, time spent in SWS decreases in favour of Stage 2."
+                title = "N3 - Deep Sleep",
+                body = "The deepest stage of Non-REM sleep, also called Slow Wave Sleep (SWS) or delta sleep. The EEG shows slow, high-amplitude delta waves. N3 is critical for physical restoration, immune function, and tissue repair. Sleepers in N3 are very difficult to wake - sometimes even loud noises over 100 dB won't rouse them. With age, time spent in N3 decreases significantly."
             ),
         )
     ),
     InfoSectionModel(
         title = "REM Sleep",
-        subtitle = "Stage 5 - the dream stage",
+        subtitle = "Stage 4 - the dream stage",
         items = listOf(
             InfoCardModel(
-                title = "Stage 5 - REM Sleep",
-                body = "The stage associated with vivid dreaming. Although the EEG resembles wakefulness, skeletal muscles are completely atonic without movement. Breathing becomes erratic, heart rate increases, and eyes move rapidly beneath closed lids. Muscle atonia is thought to have evolved to prevent us from physically acting out our dreams."
+                title = "REM - Rapid Eye Movement Sleep",
+                body = "The fourth and final stage of the sleep cycle, associated with vivid dreaming. Although the EEG resembles wakefulness, skeletal muscles are completely atonic without movement. Breathing becomes erratic, heart rate increases, and eyes move rapidly beneath closed lids.\n\nREM sleep is essential for emotional regulation, creativity, and long-term memory formation. The first REM period of the night lasts only about 10 minutes but grows progressively longer in later cycles, sometimes reaching 60 minutes by the final cycle."
             ),
         )
     ),
