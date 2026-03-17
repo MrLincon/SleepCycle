@@ -20,16 +20,15 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.whitespace.sleepcycle.R
-import dev.chrisbanes.haze.HazeDefaults
-import dev.chrisbanes.haze.HazeState
-import dev.chrisbanes.haze.hazeEffect
+import com.whitespace.sleepcycle.presentation.components.BackdropBlurState
+import com.whitespace.sleepcycle.presentation.components.backdropBlurChild
 
 private val GlassShape = RoundedCornerShape(60.dp)
 
 @Composable
 fun FloatingBottomBar(
     navController: NavHostController,
-    hazeState: HazeState,
+    blurState: BackdropBlurState,
     modifier: Modifier = Modifier
 ) {
     val items = listOf(
@@ -47,20 +46,18 @@ fun FloatingBottomBar(
             .wrapContentWidth()
             .height(66.dp)
             .clip(GlassShape)
-            .hazeEffect(
-                state = hazeState,
-                style = HazeDefaults.style(
-                    backgroundColor = Color.Black.copy(alpha = 0.22f),
-                    blurRadius = 20.dp,
-                    noiseFactor = 0.12f,
-                )
+            .backdropBlurChild(
+                state = blurState,
+                blurRadius = 25f,
+                noiseFactor = 0.2f,
+                tintColor = Color.White.copy(alpha = 0.01f)
             )
             .border(
                 width = 1.dp,
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        Color.White.copy(alpha = 0.35f),
-                        Color.White.copy(alpha = 0.08f)
+                        Color.White.copy(alpha = 0.5f),
+                        Color.White.copy(alpha = 0.1f)
                     )
                 ),
                 shape = GlassShape

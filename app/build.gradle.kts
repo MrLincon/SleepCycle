@@ -57,7 +57,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.compose.material.icons.extended)
-    implementation(libs.haze)
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)

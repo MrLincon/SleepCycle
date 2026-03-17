@@ -12,13 +12,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import dev.chrisbanes.haze.HazeState
-import dev.chrisbanes.haze.hazeSource
+import com.whitespace.sleepcycle.presentation.components.BackdropBlurState
+import com.whitespace.sleepcycle.presentation.components.backdropBlurSource
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun AppScaffold(navController: NavHostController) {
-    val hazeState = remember { HazeState() }
+
+    val blurState = remember { BackdropBlurState() }
 
     Box(modifier = Modifier.fillMaxSize()) {
 
@@ -26,7 +27,7 @@ fun AppScaffold(navController: NavHostController) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .hazeSource(hazeState)
+                .backdropBlurSource(blurState)
         ) {
             NavGraph(
                 navController = navController,
@@ -37,7 +38,7 @@ fun AppScaffold(navController: NavHostController) {
         // FOREGROUND (glass bar)
         FloatingBottomBar(
             navController = navController,
-            hazeState = hazeState,
+            blurState = blurState,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 36.dp)
