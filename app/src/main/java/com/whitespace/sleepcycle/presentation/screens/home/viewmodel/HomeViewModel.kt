@@ -35,6 +35,11 @@ class HomeViewModel @Inject constructor(
                     scheduler.schedule(triggerTime, event.label)
                 }
             }
+            is HomeUiEvent.OnScheduleAlarmAt -> {
+                viewModelScope.launch {
+                    scheduler.schedule(event.triggerTimeMillis, event.label)
+                }
+            }
             is HomeUiEvent.OnCancelAlarm -> {
                 viewModelScope.launch {
                     scheduler.cancel(event.alarm.id)

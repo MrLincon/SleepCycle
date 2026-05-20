@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import com.whitespace.sleepcycle.R
 import io.github.mrlincon.glassybottombar.GlassyBottomBarScaffold
@@ -23,7 +24,7 @@ fun AppScaffold(navController: NavHostController) {
 
     GlassyBottomBarScaffold(
         navController = navController,
-        items = items
+        items = items,
     ) {
         NavGraph(navController = navController)
     }

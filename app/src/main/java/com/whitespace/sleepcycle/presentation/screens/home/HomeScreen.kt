@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -33,6 +34,7 @@ import androidx.navigation.NavController
 import com.whitespace.sleepcycle.domain.NapDataModel
 import com.whitespace.sleepcycle.presentation.components.ActiveAlarmsList
 import com.whitespace.sleepcycle.presentation.components.AppText
+import com.whitespace.sleepcycle.presentation.components.CustomAlarmBottomSheet
 import com.whitespace.sleepcycle.presentation.components.SetAlarmBottomSheet
 import com.whitespace.sleepcycle.presentation.screens.home.components.HomeTopBar
 import com.whitespace.sleepcycle.presentation.screens.home.components.SleepFullCardLayout
@@ -42,6 +44,7 @@ import com.whitespace.sleepcycle.presentation.screens.home.viewmodel.HomeUiEvent
 import com.whitespace.sleepcycle.presentation.screens.home.viewmodel.HomeViewModel
 import com.whitespace.sleepcycle.utils.calculateWakeUpTime
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -57,7 +60,10 @@ fun HomeScreen(
         skipPartiallyExpanded = true
     )
     var showSheet by remember { mutableStateOf(false) }
+    var showCustomAlarmSheet by remember { mutableStateOf(false) }
     var selectedNap by remember { mutableStateOf<NapDataModel?>(null) }
+    val scrollState = rememberScrollState()
+    val coroutineScope = rememberCoroutineScope()
 
     val dynamicWakeUpTime by produceState(
         initialValue = "",
@@ -89,7 +95,7 @@ fun HomeScreen(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .verticalScroll(rememberScrollState())
+                    .verticalScroll(scrollState)
             ) {
 
                 ActiveAlarmsList(
@@ -237,6 +243,18 @@ fun HomeScreen(
                     }
                 )
 
+                Spacer(Modifier.height(16.dp))
+
+                SleepFullCardLayout(
+                    number = 7,
+                    chipText = "CUSTOM",
+                    cycle = "Custom Alarm",
+                    sleepType = "Pick your wake-up time",
+                    onClick = {
+                        showCustomAlarmSheet = true
+                    }
+                )
+
                 Spacer(Modifier.height(96.dp))
             }
 
@@ -256,10 +274,34 @@ fun HomeScreen(
                         )
                         showSheet = false
                         selectedNap = null
+                        coroutineScope.launch {
+                            scrollState.animateScrollTo(0)
+                        }
                     },
                     onDismiss = {
                         showSheet = false
                         selectedNap = null
+                    },
+                    sheetState = sheetState
+                )
+            }
+
+            if (showCustomAlarmSheet) {
+                CustomAlarmBottomSheet(
+                    onSetAlarm = { triggerTimeMillis, label ->
+                        viewModel.onEvent(
+                            HomeUiEvent.OnScheduleAlarmAt(
+                                triggerTimeMillis = triggerTimeMillis,
+                                label = label
+                            )
+                        )
+                        showCustomAlarmSheet = false
+                        coroutineScope.launch {
+                            scrollState.animateScrollTo(0)
+                        }
+                    },
+                    onDismiss = {
+                        showCustomAlarmSheet = false
                     },
                     sheetState = sheetState
                 )
