@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.whitespace.sleepcycle"
-        minSdk = 24
+        minSdk = 30
         targetSdk = 36
         versionCode = 11
         versionName = "2.0.0"
@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.glassy.bottom.bar)
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)

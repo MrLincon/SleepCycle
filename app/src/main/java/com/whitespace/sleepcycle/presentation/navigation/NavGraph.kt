@@ -2,8 +2,7 @@ package com.whitespace.sleepcycle.presentation.navigation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -16,12 +15,9 @@ import com.whitespace.sleepcycle.presentation.screens.settings.SettingsScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun NavGraph(
-    navController: NavHostController,
-    paddingValues: PaddingValues
-) {
+fun NavGraph(navController: NavHostController) {
     NavHost(
-        modifier = Modifier.padding(paddingValues),
+        modifier = Modifier.fillMaxSize(),
         navController = navController,
         startDestination = Screen.Home.route
     ) {
